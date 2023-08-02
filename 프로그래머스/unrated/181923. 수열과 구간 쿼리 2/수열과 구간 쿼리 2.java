@@ -1,0 +1,22 @@
+import java.util.*;
+class Solution {
+    public int[] solution(int[] arr, int[][] queries) {
+        int[] answer = new int[queries.length];
+        Arrays.fill(answer, -1);
+        for(int i = 0; i < queries.length; i++){
+            int min = Integer.MAX_VALUE;
+            for(int j = queries[i][0]; j <= queries[i][1]; j++){
+                if(queries[i][2] < arr[j]){
+                    if(arr[j] < min){
+                        min = arr[j];                        
+                        answer[i] = min;
+                    }
+                }
+            }
+            // if(answer[i] == -10000){
+            //     answer[i] = -1;
+            // }
+        }
+        return answer;
+    }
+}
