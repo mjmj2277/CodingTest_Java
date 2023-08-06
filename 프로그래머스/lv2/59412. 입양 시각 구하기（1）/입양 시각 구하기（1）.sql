@@ -1,10 +1,6 @@
--- SELECT DATETIME AS HOUR, COUNT(*) 
--- FROM ANIMAL_OUTS
--- GROUP BY
-
-select hour, count(hour) count
-from (SELECT to_number(to_char(datetime, 'HH24')) as hour
-        from ANIMAL_OUTS)
-where hour>=9 and hour<20
-group by hour
-order by hour
+SELECT TO_NUMBER(TO_CHAR(DATETIME, 'hh24')) AS HOUR,
+       COUNT(*) AS COUNT
+FROM ANIMAL_OUTS 
+WHERE TO_NUMBER(TO_CHAR(DATETIME, 'hh24')) BETWEEN 9 AND 20
+GROUP BY TO_NUMBER(TO_CHAR(DATETIME, 'hh24'))
+ORDER BY HOUR ASC
