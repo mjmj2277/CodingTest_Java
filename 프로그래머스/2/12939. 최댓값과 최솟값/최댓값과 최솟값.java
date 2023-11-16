@@ -3,9 +3,8 @@ class Solution {
     public String solution(String s) {
         String answer = "";
         String[] a = s.split(" ");
-        System.out.println(Arrays.toString(a));
-        int[] b = new int[a.length];
         
+        int[] b = new int[a.length];        
         for(int i = 0; i < a.length; i++) {
             b[i] = Integer.parseInt(a[i]);
         }
