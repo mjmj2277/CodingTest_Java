@@ -6,7 +6,7 @@ class Solution {
         List<Integer> scoresList = new ArrayList<>();
         
         for (int i = 0; i < score.length; i++) {
-            scoresList .add(score[i]);
+            scoresList.add(score[i]);
             
             if(scoresList .size() > k) {
                 scoresList.remove(Collections.min(scoresList));
